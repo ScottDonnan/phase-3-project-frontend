@@ -1,9 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import {useEffect, useState} from 'react'
+import Header from './components/header';
+import DeckContainer from './components/deck-container';
+import CardContainer from './components/card-container';
+import Sidebar from './components/sidebar';
 
 function App() {
+  
+  const [displayCards, setDisplayCards] = useState([])
+  
+  useEffect(()=>{
+    fetch("http://localhost:9292/cards")
+    .then(res => res.json())
+    .then(data => setDisplayCards(data))
+  }, [])
+
   return (
-    <h1>Phse 3 Project</h1>
+    <div>
+      <Header />
+      <Sidebar />
+      <DeckContainer />
+      <CardContainer displayCards={displayCards}/>
+    </div>
   );
 }
 

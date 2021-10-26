@@ -1,3 +1,14 @@
 .App {
   text-align: center;
 }
+
+.card-div {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-div img {
+  width: 50%;
+}
