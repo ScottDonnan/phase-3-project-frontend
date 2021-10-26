@@ -19,7 +19,7 @@ function App() {
     <div>
       <Header />
       <Sidebar />
-      <DeckContainer />
+      <DeckContainer setDisplayCards={setDisplayCards}/>
       <CardContainer displayCards={displayCards}/>
     </div>
   );
