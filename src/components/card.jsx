@@ -1,5 +1,5 @@
 
-function Card({id, name, img, hero_id, selectedDeck}) {
+function Card({id, name, img, hero_id, selectedDeck, getDeckCards}) {
     
     function handleAddCardToDeck(e) {
         const cardObj = {
@@ -15,6 +15,7 @@ function Card({id, name, img, hero_id, selectedDeck}) {
         })
         .then(r => r.json())
         .then(data => console.log(data))
+        getDeckCards(selectedDeck)
       }
     
     return (

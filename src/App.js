@@ -9,6 +9,7 @@ function App() {
   
   const [displayCards, setDisplayCards] = useState([])
   const [selectedDeck, setSelectedDeck] = useState()
+  const [deckCardList, setDeckCardList] = useState([])
   
   
 
@@ -20,13 +21,18 @@ function App() {
     
   }, [])
 
+  const getDeckCards = (id) => {
+    fetch(`http://localhost:9292/decks/${id}/allcards`)
+    .then(res => res.json())
+    .then(data => setDeckCardList(data))
+  }
 
   return (
     <div>
       <Header />
       <Sidebar />
-      <DeckContainer setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} />
-      <CardContainer displayCards={displayCards} selectedDeck={selectedDeck}/>
+      <DeckContainer getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} />
+      <CardContainer getDeckCards={getDeckCards} displayCards={displayCards} selectedDeck={selectedDeck}/>
     </div>
   );
 }
