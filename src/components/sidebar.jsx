@@ -1,5 +1,6 @@
 import React from "react";
 import {useEffect, useState} from 'react'
+import {Link} from 'react-router-dom'
 
 function Sidebar() {
 
@@ -13,8 +14,10 @@ function Sidebar() {
 
     return (
       <div className = "SideBar">
+        <Link exact to="/heroClass">
         <h2>All</h2>
         {heroClass.map((hero) => <h2>{hero.name}</h2>)}
+        </Link>
       </div>
     );
   }

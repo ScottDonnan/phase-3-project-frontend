@@ -1,4 +1,6 @@
 import Card from "./card";
+import HeroCards from "./heroCards";
+import {Route, Switch} from 'react-router-dom'
 
 function CardContainer({displayCards, selectedDeck}) {
     
@@ -7,7 +9,15 @@ function CardContainer({displayCards, selectedDeck}) {
   return (
       <div className = 'CardContainer'>
         <div className='card-div'>
+          <Switch>
+          <Route exact path="/">
           {cardList}
+          </Route>
+
+          <Route exact path="/heroClass">
+            <HeroCards />
+          </Route>
+          </Switch>
         </div>
       </div>
     );
