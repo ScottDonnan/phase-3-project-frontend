@@ -8,7 +8,7 @@ import Sidebar from './components/sidebar';
 function App() {
   
   const [displayCards, setDisplayCards] = useState([])
-  const [heroClass, setheroClass] = useState([])
+  
   
 
   useEffect(()=>{
@@ -23,7 +23,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Sidebar heroClass={heroClass}/>
+      <Sidebar />
       <DeckContainer setDisplayCards={setDisplayCards}/>
       <CardContainer displayCards={displayCards}/>
     </div>
