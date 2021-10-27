@@ -8,6 +8,7 @@ import Sidebar from './components/sidebar';
 function App() {
   
   const [displayCards, setDisplayCards] = useState([])
+  const [selectedDeck, setSelectedDeck] = useState()
   
   
 
@@ -24,8 +25,8 @@ function App() {
     <div>
       <Header />
       <Sidebar />
-      <DeckContainer setDisplayCards={setDisplayCards}/>
-      <CardContainer displayCards={displayCards}/>
+      <DeckContainer setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} />
+      <CardContainer displayCards={displayCards} selectedDeck={selectedDeck}/>
     </div>
   );
 }
