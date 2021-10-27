@@ -24,7 +24,7 @@ function App() {
   return (
     <div>
       <Header />
-      <Sidebar />
+      <Sidebar  displayCards={displayCards}/>
       <DeckContainer setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} />
       <CardContainer displayCards={displayCards} selectedDeck={selectedDeck}/>
     </div>
