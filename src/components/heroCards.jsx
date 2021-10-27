@@ -4,20 +4,27 @@ import {useParams} from 'react-router-dom'
 
 function HeroCards() {
 
-   /* const id = useParams().id
+
+    const [isLoaded, setIsLoaded] =useState(false);
+    const [heroCards, setHeroCards] = useState([])
+   
+    const heroClass = useParams().heroClass
     
     useEffect(() => {
-        fetch(`http://localhost:9292/cards/${id}`)
+        fetch(`http://localhost:9292/heros/${heroClass}`)
         .then(res =>res.json())
         .then(data => {
-            return setEachCards(data), setIsLoaded(true)})
-    },[id])
+            return setHeroCards(data), setIsLoaded(true)})
+    },[heroClass])
+
+    console.log(heroCards)
+    console.log(useParams())
     
-    if (!isLoaded) return <h1>Loading...</h1> */
+    if (!isLoaded) return <h1>Loading...</h1> 
 
     return (
         <div>
-            <h1>Hero Class Cards</h1>
+            {heroCards.map((hero) => <img src={hero.img} alt={hero.name} />)}
         </div>
     );
 }
