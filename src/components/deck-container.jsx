@@ -19,7 +19,7 @@ function DeckContainer({setDisplayCards}) {
   }
 
   return (
-      <div>
+      <div className = 'CardContainer'>
         <h1>Deck Container</h1>
         {deckList.map(deck => <button key={deck.id} value={deck.id} onClick={handleClick}>{deck.name}</button>)}
         {deckCardList === false ? null : <DeckCards deckCardList={deckCardList}/>}

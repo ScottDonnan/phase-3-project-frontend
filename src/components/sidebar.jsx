@@ -1,7 +1,13 @@
+import React from "react";
 
-function Sidebar() {
+
+function Sidebar({heroClass}) {
+
+  
     return (
-      <h1>Sidebar</h1>
+      <div className = "SideBar">
+        {heroClass.map((hero) => <h3>{hero.name}</h3>)}
+      </div>
     );
   }
   

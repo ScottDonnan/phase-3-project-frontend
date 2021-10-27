@@ -8,17 +8,25 @@ import Sidebar from './components/sidebar';
 function App() {
   
   const [displayCards, setDisplayCards] = useState([])
+  const [heroClass, setheroClass] = useState([])
   
+
   useEffect(()=>{
     fetch("http://localhost:9292/cards")
     .then(res => res.json())
     .then(data => setDisplayCards(data))
+
+    fetch("http://localhost:9292/heros")
+    .then(res => res.json())
+    .then(data => setheroClass(data))
+    
   }, [])
+
 
   return (
     <div>
       <Header />
-      <Sidebar />
+      <Sidebar heroClass={heroClass}/>
       <DeckContainer setDisplayCards={setDisplayCards}/>
       <CardContainer displayCards={displayCards}/>
     </div>
