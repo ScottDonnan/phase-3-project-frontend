@@ -17,9 +17,6 @@ function HeroCards() {
             return setHeroCards(data), setIsLoaded(true)})
     },[heroClass])
 
-    console.log(heroCards)
-    console.log(useParams())
-    
     if (!isLoaded) return <h1>Loading...</h1> 
 
     return (
