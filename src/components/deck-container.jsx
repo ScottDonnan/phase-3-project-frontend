@@ -22,11 +22,20 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
     getDeckCards(e.target.value)
   }
 
+  const deleteCardFromDeck = (cardId) => {
+    console.log("cardID", cardId)
+    fetch(`http://localhost:9292/decks/${selectedDeck}/${cardId}`, {
+      method: "DELETE"
+    })
+    .then(console.log("Card Deleted"))
+    getDeckCards(selectedDeck)
+}
+
   return (
       <div className = 'CardContainer'>
         <h1>Deck Container</h1>
         {deckList.map(deck => <button key={deck.id} value={deck.id} onClick={handleClick}>{deck.name}</button>)}
-        {displayDeck === false ? null : <DeckCards deckCardList={deckCardList}/>}
+        {displayDeck === false ? null : <DeckCards deleteCardFromDeck={deleteCardFromDeck} deckCardList={deckCardList}/>}
       </div>
     );
   }
