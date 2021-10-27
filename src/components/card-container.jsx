@@ -6,7 +6,6 @@ function CardContainer({displayCards}) {
 
   return (
       <div className = 'CardContainer'>
-        <h1>Card Container</h1>
         <div className='card-div'>
           {cardList}
         </div>

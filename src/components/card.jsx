@@ -1,7 +1,7 @@
 
 function Card({name, img, hero_id}) {
     return (
-        <div>
+        <div >
             <img src = {img} alt={name} />
         </div>
     );

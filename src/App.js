@@ -16,9 +16,6 @@ function App() {
     .then(res => res.json())
     .then(data => setDisplayCards(data))
 
-    fetch("http://localhost:9292/heros")
-    .then(res => res.json())
-    .then(data => setheroClass(data))
     
   }, [])
 

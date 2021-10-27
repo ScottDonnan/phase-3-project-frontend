@@ -42,10 +42,10 @@ body {
 .card-div {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
+  padding-left: 0px;
+  margin-left: 0px;
 }
 
 .card-div img {
-  width: 50%;
+  width: 65%;
 }
