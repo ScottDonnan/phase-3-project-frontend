@@ -49,3 +49,15 @@ body {
 .card-div img {
   width: 65%;
 }
+
+.deck-cards img {
+  width: 5%;
+}
+
+.deck-cards li {
+  background-color: blue;
+  border-radius: 25px;
+  list-style-type: none;
+  width: 200px;
+  margin: 10px;
+}

@@ -2,9 +2,9 @@ import Card from "./card";
 import HeroCards from "./heroCards";
 import {Route, Switch} from 'react-router-dom'
 
-function CardContainer({displayCards}) {
+function CardContainer({displayCards, selectedDeck}) {
     
-  const cardList = displayCards.map(card => <Card className='card-div' key={card.id} name={card.name} img={card.img} hero_id={card.hero_id} />)
+  const cardList = displayCards.map(card => <Card className='card-div' key={card.id} selectedDeck={selectedDeck} id={card.id} name={card.name} img={card.img} hero_id={card.hero_id} />)
 
   return (
       <div className = 'CardContainer'>
