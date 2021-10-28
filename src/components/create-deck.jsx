@@ -5,8 +5,8 @@ function CreateDeck({selectedHero}) {
 
     const [name, setName] = useState("")
 
-    function handleSubmit (){   
-    
+    function handleSubmit (e){   
+        
         const cardObj = {
             name: name,
             hero_id: selectedHero

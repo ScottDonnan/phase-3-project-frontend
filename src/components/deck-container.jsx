@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import DeckCards from "./deckcards";
 
-function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCards, selectedHero, setCreateDeck}) {
+function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCards, selectedHero, setCreateDeck, setDeckCardList}) {
   
   const [deckList, setDeckList] = useState([])
   const [displayDeck, setDisplayDeck] = useState(false)
@@ -27,8 +27,13 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
   const deleteCardFromDeck = (cardId) => {
     console.log("cardID", cardId)
     fetch(`http://localhost:9292/decks/${selectedDeck}/${cardId}`, {method: "DELETE"})
-    .then(console.log("Card Deleted"))
-    .then(getDeckCards(selectedDeck))
+    .then(r => r.json())
+    deleteDeckCard(cardId)
+  }
+
+  function deleteDeckCard(deletedCardId) {
+    const newDeck = deckCardList.filter(card => card.id !== deletedCardId)
+    setDeckCardList(newDeck)
   }
 
   const heroSpecificDecks = deckList.filter(deck => deck.hero_id === selectedHero)
