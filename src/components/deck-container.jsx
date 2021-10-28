@@ -34,6 +34,7 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
   return (
       <div className = 'CardContainer'>
         <h1>Deck Container</h1>
+        <button>Create New Deck</button>
         {deckList.map(deck => <button key={deck.id} value={deck.id} onClick={handleClick}>{deck.name}</button>)}
         {displayDeck === false ? null : <DeckCards deleteCardFromDeck={deleteCardFromDeck} deckCardList={deckCardList}/>}
       </div>
