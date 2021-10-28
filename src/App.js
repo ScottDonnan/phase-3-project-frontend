@@ -1,8 +1,9 @@
 import './App.css';
 import {useEffect, useState} from 'react'
-import Header from './components/header';
 import CardContainer from './components/card-container';
 import Sidebar from './components/sidebar';
+import NavBar from './components/NavBar';
+import Logo from './components/logo';
 
 function App() {
   
@@ -41,7 +42,7 @@ function App() {
 
   return (
     <div>
-      <Header />
+      <NavBar />
       {/* <DeckContainer getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} /> */}
       <CardContainer getDeckCards={getDeckCards} displayCards={displayCards} selectedDeck={selectedDeck} />     
       <Sidebar getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} />

@@ -21,9 +21,9 @@ function HeroCards() {
     if (!isLoaded) return <h1>Loading...</h1> 
 
     return (
-        <div className="HeroCards">   
-            {heroCards.map((hero) => <img src={hero.img} alt={hero.name} />)}
-        </div>
+        heroCards.map((hero) => <div className="HeroCards">   
+             <img src={hero.img} alt={hero.name} />
+        </div>)
     );
 }
 
