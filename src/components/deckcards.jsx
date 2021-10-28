@@ -5,7 +5,7 @@ function DeckCards({deckCardList, deleteCardFromDeck}) {
     
     const listOfCards = deckCardList.map(card => {
         return (
-            <li onClick={() => handleClick(card.id)}>
+            <li onClick={() => handleClick(card.id)} key={card.id}>
                 {card.name}
                 <img src={card.img} alt={card.name} />
             </li>)
