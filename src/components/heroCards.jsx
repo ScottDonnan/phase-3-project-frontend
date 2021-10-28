@@ -2,7 +2,7 @@ import React from "react";
 import {useState, useEffect} from "react"
 import {useParams} from 'react-router-dom'
 
-function HeroCards({selectedDeck, getDeckCards}) {
+function HeroCards({selectedDeck, getDeckCards, setSelectedHero}) {
 
 
     const [isLoaded, setIsLoaded] =useState(false);
@@ -14,7 +14,9 @@ function HeroCards({selectedDeck, getDeckCards}) {
         fetch(`http://localhost:9292/heros/${heroClass}`)
         .then(res =>res.json())
         .then(data => {
-            return setHeroCards(data), setIsLoaded(true)})
+            setHeroCards(data)
+            setIsLoaded(true)
+            setSelectedHero(data[0].hero_id)})
     },[heroClass])
 
     
@@ -25,7 +27,7 @@ function HeroCards({selectedDeck, getDeckCards}) {
             deck_id: selectedDeck,
             card_id: heroId
         }
-        console.log(cardObj)
+
         fetch("http://localhost:9292/card_decks", {
           method: "POST",
           headers: {Accept: "application/json",
@@ -33,7 +35,7 @@ function HeroCards({selectedDeck, getDeckCards}) {
           body: JSON.stringify(cardObj)
         })
         .then(r => r.json())
-        .then(data => console.log(data))
+        
         getDeckCards(selectedDeck)
       }
 
