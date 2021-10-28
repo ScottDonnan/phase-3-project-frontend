@@ -1,11 +1,11 @@
 
 function DeckCards({deckCardList, deleteCardFromDeck, selectedDeckName}) {
     
-    const handleClick = (cardID) => deleteCardFromDeck(cardID)
+    // const handleClick = (cardID) => deleteCardFromDeck(cardID)
     
     const listOfCards = deckCardList.map(card => {
         return (
-            <li onClick={() => handleClick(card.id)} key={card.id}>
+            <li onClick={() => deleteCardFromDeck(card.id)} key={card.id}>
                 {card.name}
                 <img src={card.img} alt={card.name} />
             </li>)

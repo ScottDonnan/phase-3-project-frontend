@@ -19,7 +19,7 @@ function NavBar({setCreateDeck}) {
     return (
       <div className = 'header'>
 
-        <img src= "http://assets.stickpng.com/images/58eeb797ee9418469d17ee04.png" />
+        <img src= "https://images.blz-contentstack.com/v3/assets/bltc965041283bac56c/blt6c7a1670b63c236d/5f177eb1670b730798f13b03/homepage_logo.webp" />
 
         <Link exact to="/">
           <h2>ALL</h2>
