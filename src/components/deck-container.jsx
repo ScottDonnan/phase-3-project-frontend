@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import DeckCards from "./deckcards";
 
-function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCards, selectedHero}) {
+function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCards, selectedHero, setCreateDeck}) {
   
   const [deckList, setDeckList] = useState([])
   const [displayDeck, setDisplayDeck] = useState(false)
@@ -37,7 +37,7 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
   return (
       <div className="deck-container">
         <h1>Deck Container</h1>
-        <button>Create New Deck</button>
+        <button onClick={()=> setCreateDeck(false)}>Create New Deck</button>
         {heroSpecificDecks.map(deck => <button key={deck.id} onClick={() => handleClick(deck.name, deck.id)}>{deck.name}</button>)}
         {displayDeck === false ? null : <DeckCards selectedDeckName={selectedDeckName} deleteCardFromDeck={deleteCardFromDeck} deckCardList={deckCardList}/>}
       </div>

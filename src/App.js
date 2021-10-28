@@ -3,6 +3,7 @@ import {useEffect, useState} from 'react'
 import CardContainer from './components/card-container';
 import Sidebar from './components/sidebar';
 import NavBar from './components/NavBar';
+import CreateDeck from './components/create-deck';
 
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
   const [selectedDeck, setSelectedDeck] = useState()
   const [deckCardList, setDeckCardList] = useState([])
   const [selectedHero, setSelectedHero] = useState()
+  const [createDeck, setCreateDeck] = useState(true)
   
   
 
@@ -44,10 +46,11 @@ function App() {
 
   return (
     <div>
-      <NavBar />
+      <NavBar setCreateDeck={setCreateDeck}/>
       {/* <DeckContainer getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} /> */}
-      <CardContainer setSelectedHero={setSelectedHero} getDeckCards={getDeckCards} displayCards={displayCards} selectedDeck={selectedDeck} />     
-      <Sidebar selectedHero={selectedHero} getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} />
+      <CardContainer setSelectedHero={setSelectedHero} getDeckCards={getDeckCards} displayCards={displayCards} selectedDeck={selectedDeck} />
+
+      {createDeck=== true ? <Sidebar selectedHero={selectedHero} getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} setCreateDeck={setCreateDeck}/> : <CreateDeck selectedHero={selectedHero}/>}
     </div>
   );
 }

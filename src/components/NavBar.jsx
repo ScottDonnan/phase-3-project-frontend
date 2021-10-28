@@ -5,7 +5,7 @@ import {Link} from 'react-router-dom'
 import DeckContainer from "./deck-container";
 import {Route, Switch} from 'react-router-dom'
 
-function NavBar() {
+function NavBar({setCreateDeck}) {
 
   const [heroClass, setheroClass] = useState([])
 
@@ -26,7 +26,7 @@ function NavBar() {
         </Link>
 
         {heroClass.map((hero) =>
-          <Link exact to={`/heroClass/${hero.name}`}>
+          <Link onClick={()=> setCreateDeck(true)}exact to={`/heroClass/${hero.name}`}>
               <h2>{hero.name}</h2>
           </Link>)
         }
