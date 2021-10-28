@@ -39,8 +39,8 @@ function HeroCards({selectedDeck, getDeckCards, setSelectedHero}) {
       }
 
     return (
-        heroCards.map((hero) => <div className="HeroCards">   
-             <img src={hero.img} alt={hero.name} />
+        heroCards.map((card) => <div className="HeroCards">   
+             <img onClick={() => handleAddCardToDeck(card.id)} src={card.img} alt={card.name} />
         </div>)
     );
 }
