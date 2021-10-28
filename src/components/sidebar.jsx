@@ -10,18 +10,6 @@ function Sidebar({getDeckCards, deckCardList, setDisplayCards, setSelectedDeck, 
 
     return (
       <div className = "SideBar">
-
-
-//         <Link exact to="/">
-//           <h2>All</h2>
-//         </Link>
-
-//         {heroClass.map((hero) =>
-//           <Link exact to={`/heroClass/${hero.name}`} key={hero.id}>
-//               <h2>{hero.name}</h2>
-//           </Link>)
-//         }
-      
         <Route exact path="/heroClass/:heroClass">
           <DeckContainer selectedHero={selectedHero} getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck}/>
         </Route>

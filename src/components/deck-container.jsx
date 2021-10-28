@@ -5,6 +5,8 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
   
   const [deckList, setDeckList] = useState([])
   const [displayDeck, setDisplayDeck] = useState(false)
+  let selectedDeckName = "My Deck"
+                          console.log(selectedDeckName)
 
   useEffect(() => {
     fetch("http://localhost:9292/decks")
@@ -12,14 +14,14 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
     .then(data => setDeckList(data))
   }, [])
 
-  const handleClick = (e) => {
-    if(e.target.value !== selectedDeck){
-      setSelectedDeck(e.target.value)
+  const handleClick = (deckName, deckId) => {
+    selectedDeckName = deckName
+                          console.log(selectedDeckName)
+    if(deckId !== selectedDeck){
+      setSelectedDeck(deckId)
     }
-    
     setDisplayDeck((value) => value = !displayDeck)
-    
-    getDeckCards(e.target.value)
+    getDeckCards(deckId)
   }
 
   const deleteCardFromDeck = (cardId) => {
@@ -33,11 +35,11 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
 
   
   return (
-      <div>
+      <div className="deck-container">
         <h1>Deck Container</h1>
         <button>Create New Deck</button>
-        {heroSpecificDecks.map(deck => <button key={deck.id} value={deck.id} onClick={handleClick}>{deck.name}</button>)}
-        {displayDeck === false ? null : <DeckCards deleteCardFromDeck={deleteCardFromDeck} deckCardList={deckCardList}/>}
+        {heroSpecificDecks.map(deck => <button key={deck.id} onClick={() => handleClick(deck.name, deck.id)}>{deck.name}</button>)}
+        {displayDeck === false ? null : <DeckCards selectedDeckName={selectedDeckName} deleteCardFromDeck={deleteCardFromDeck} deckCardList={deckCardList}/>}
       </div>
     );
   }
