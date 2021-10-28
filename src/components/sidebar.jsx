@@ -1,8 +1,10 @@
 import React from "react";
 import {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
+import DeckContainer from "./deck-container";
+import {Route, Switch} from 'react-router-dom'
 
-function Sidebar({displayCards}) {
+function Sidebar({getDeckCards, deckCardList, setDisplayCards, setSelectedDeck, selectedDeck}) {
 
   const [heroClass, setheroClass] = useState([])
 
@@ -21,9 +23,13 @@ function Sidebar({displayCards}) {
         </Link>
 
         {heroClass.map((hero) =>
-        <Link exact to={`/heroClass/${hero.name}`}>
-            <h2>{hero.name}</h2>
-        </Link>)}
+          <Link exact to={`/heroClass/${hero.name}`}>
+              <h2>{hero.name}</h2>
+          </Link>)
+        }
+        <Route exact path="/heroClass/:heroClass">
+          <DeckContainer getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck}/>
+        </Route>
       </div>
     );
   }

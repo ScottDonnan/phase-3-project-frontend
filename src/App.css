@@ -38,6 +38,11 @@ body {
   color: white;
 }
 
+.HeroCards {
+  display: flex;
+  flex-wrap: wrap;
+  width: 25%;
+}
 
 .card-div {
   display: flex;

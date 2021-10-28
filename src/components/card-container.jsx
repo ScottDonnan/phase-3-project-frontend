@@ -10,13 +10,13 @@ function CardContainer({displayCards, selectedDeck, getDeckCards}) {
       <div className = 'CardContainer'>
         <div className='card-div'>
           <Switch>
-          <Route exact path="/">
-          {cardList}
-          </Route>
+            <Route exact path="/">
+              {cardList}
+            </Route>
 
-          <Route exact path="/heroClass/:heroClass">
-            <HeroCards />
-          </Route>
+            <Route exact path="/heroClass/:heroClass">
+              <HeroCards />
+            </Route>
           </Switch>
         </div>
       </div>
