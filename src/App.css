@@ -102,3 +102,8 @@ a {
   width: 200px;
   margin: 10px;
 }
+
+.deck-container {
+  display: flex;
+  flex-direction: column;
+}

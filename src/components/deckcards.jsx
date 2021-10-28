@@ -1,5 +1,5 @@
 
-function DeckCards({deckCardList, deleteCardFromDeck}) {
+function DeckCards({deckCardList, deleteCardFromDeck, selectedDeckName}) {
     
     const handleClick = (cardID) => deleteCardFromDeck(cardID)
     
@@ -10,9 +10,10 @@ function DeckCards({deckCardList, deleteCardFromDeck}) {
                 <img src={card.img} alt={card.name} />
             </li>)
     })
-
+    
     return(
         <div className="deck-cards">
+            <h2>{selectedDeckName}</h2>
             {listOfCards}
         </div>
     )
