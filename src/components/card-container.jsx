@@ -15,7 +15,7 @@ function CardContainer({displayCards, selectedDeck, getDeckCards}) {
             </Route>
 
             <Route exact path="/heroClass/:heroClass">
-              <HeroCards />
+              <HeroCards getDeckCards={getDeckCards} selectedDeck={selectedDeck}/>
             </Route>
           </Switch>
         </div>
