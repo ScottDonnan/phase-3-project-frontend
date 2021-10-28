@@ -18,7 +18,6 @@ function HeroCards({selectedDeck, getDeckCards, setSelectedHero}) {
             setIsLoaded(true)
             setSelectedHero(data[0].hero_id)})
     },[heroClass])
-
     
     if (!isLoaded) return <h1>Loading...</h1> 
 
@@ -40,9 +39,9 @@ function HeroCards({selectedDeck, getDeckCards, setSelectedHero}) {
       }
 
     return (
-        <div className="HeroCards">   
-            {heroCards.map((hero) => <img onClick={() => handleAddCardToDeck(hero.id)} key={hero.id} src={hero.img} alt={hero.name} />)}
-        </div>
+        heroCards.map((hero) => <div className="HeroCards">   
+             <img src={hero.img} alt={hero.name} />
+        </div>)
     );
 }
 

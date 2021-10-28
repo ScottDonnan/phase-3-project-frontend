@@ -4,7 +4,7 @@ import {Route, Switch} from 'react-router-dom'
 
 function CardContainer({displayCards, selectedDeck, getDeckCards, setSelectedHero}) {
     
-  const cardList = displayCards.map(card => <Card className='card-div' key={card.id} getDeckCards={getDeckCards} selectedDeck={selectedDeck} id={card.id} name={card.name} img={card.img} hero_id={card.hero_id} />)
+  const cardList = displayCards.map(card => <Card  key={card.id} getDeckCards={getDeckCards} selectedDeck={selectedDeck} id={card.id} name={card.name} img={card.img} hero_id={card.hero_id} />)
 
   return (
       <div className = 'CardContainer'>
