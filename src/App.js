@@ -3,7 +3,7 @@ import {useEffect, useState} from 'react'
 import CardContainer from './components/card-container';
 import Sidebar from './components/sidebar';
 import NavBar from './components/NavBar';
-import Logo from './components/logo';
+
 
 function App() {
   

@@ -4,7 +4,6 @@ import {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import DeckContainer from "./deck-container";
 import {Route, Switch} from 'react-router-dom'
-import Logo from './logo';
 
 function NavBar() {
 

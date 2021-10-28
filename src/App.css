@@ -15,10 +15,9 @@ body {
 
 .header {
   width: 100%;
-  padding-right: 50px;
+  padding-right: 80px;
   display: flex;
   flex-basis: auto;
-  
   font-size: 25px;
   align-items:center;
   justify-content: space-between;
@@ -72,11 +71,13 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  
 }
 
 .HeroCards img {
   width: 30%;
 }
+
 
 .card-div {
   display: flex;
