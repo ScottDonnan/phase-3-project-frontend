@@ -44,9 +44,9 @@ function App() {
   return (
     <div>
       <Header />
-      <Sidebar />
       <DeckContainer getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} />
       <CardContainer getDeckCards={getDeckCards} displayCards={displayCards} selectedDeck={selectedDeck} />     
+      <Sidebar  displayCards={displayCards}/>
     </div>
   );
 }
