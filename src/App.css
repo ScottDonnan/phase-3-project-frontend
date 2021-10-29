@@ -171,6 +171,7 @@ a {
 .deck-container {
   display: flex;
   flex-direction: column;
+  text-align: center;
 }
 
 .deck-container h2 {
@@ -183,7 +184,8 @@ a {
 
 .deck-container button {
   width: 160px;
-  border-radius: 25px;
+  /* height: 25px; */
+  border-radius: 5px;
 }
 
 .deck-container button:hover {
