@@ -3,7 +3,7 @@ import React from "react";
 import {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 
-function NavBar({setCreateDeck}) {
+function NavBar({setCreateDeck, setDisplayDeck}) {
 
   const [heroClass, setheroClass] = useState([])
 
@@ -13,6 +13,11 @@ function NavBar({setCreateDeck}) {
     .then(res => res.json())
     .then(data => setheroClass(data))
   }, [])
+
+    function handleClick() {
+      setCreateDeck(true)
+      setDisplayDeck(false)
+    }
 
     return (
       <div className = 'header'>
@@ -24,7 +29,7 @@ function NavBar({setCreateDeck}) {
         </Link>
 
         {heroClass.map((hero) =>
-          <Link onClick={()=> setCreateDeck(true)}exact to={`/heroClass/${hero.name}`}>
+          <Link onClick={handleClick}exact to={`/heroClass/${hero.name}`}>
               <h2>{hero.name}</h2>
           </Link>)
         }
