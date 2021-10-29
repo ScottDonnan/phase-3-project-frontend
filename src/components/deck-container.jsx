@@ -39,7 +39,9 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
       <div className="deck-container">
         <button onClick={()=> !setCreateDeck(false)}>Create New Deck</button>
         {heroSpecificDecks.map(deck => <button key={deck.id} onClick={() => handleClick(deck.name, deck.id)}>{deck.name}</button>)}
+        <br />
         {displayDeck === false ? null : <DeckCards selectedDeckName={selectedDeckName} deleteCardFromDeck={deleteCardFromDeck} deckCardList={deckCardList}/>}
+        
       </div>
     );
   }
