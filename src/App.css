@@ -65,6 +65,8 @@ a {
 .CardContainer {
   margin-left: 200px;
   color: white;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .HeroCards {
@@ -72,15 +74,30 @@ a {
   flex-wrap: wrap;
   justify-content: center;
   width: 33%;
-  
+  position: relative;
+  top: 0;
+  right: 0;
+  transition: top .5s, right .5s;
+}
+
+.HeroCards:hover {
+  position: relative;
+  top: -7px;
+  right: -7px;
 }
 
 .card-div {
   display: flex;
   flex-wrap: wrap;
+  /* justify-content: center; */
+  width: 100%;
+}
+
+.card-div div{
+  width: 33%;
+  display: flex;
   justify-content: center;
-  padding-left: 0px;
-  margin-left: 50px;
+  
 }
 
 .card-div img {
@@ -88,15 +105,22 @@ a {
 }
 
 .deck-cards img {
-  width: 5%;
+  width: 80%;
+  margin-left: 10%;
 }
 
 .deck-cards li {
-  background-color: blue;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   border-radius: 25px;
+  border-style: solid;
+  border-width: 1px;
+  border-color: black;
   list-style-type: none;
-  width: 200px;
+  width: 150px;
   margin: 10px;
+  padding: 10px;
 }
 
 .deck-container {
