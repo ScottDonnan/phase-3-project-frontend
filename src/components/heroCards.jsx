@@ -2,7 +2,7 @@ import React from "react";
 import {useState, useEffect} from "react"
 import {useParams} from 'react-router-dom'
 
-function HeroCards({selectedDeck, getDeckCards, setSelectedHero}) {
+function HeroCards({deckCardList, selectedDeck, getDeckCards, setSelectedHero}) {
 
 
     const [isLoaded, setIsLoaded] =useState(false);
@@ -21,22 +21,29 @@ function HeroCards({selectedDeck, getDeckCards, setSelectedHero}) {
     
     if (!isLoaded) return <h1>Loading...</h1> 
 
-    function handleAddCardToDeck(heroId) {
+    function handleAddCardToDeck(cardId) {
         const cardObj = {
             deck_id: selectedDeck,
-            card_id: heroId
+            card_id: cardId
         }
 
-        fetch("http://localhost:9292/card_decks", {
-          method: "POST",
-          headers: {Accept: "application/json",
-                "Content-Type": "application/json"},
-          body: JSON.stringify(cardObj)
-        })
-        .then(r => r.json())
-        
-        getDeckCards(selectedDeck)
-      }
+        if (deckCardList.map(card => card.id).includes(cardId)) {
+            console.log("only one copy allowed")
+        } else if (deckCardList.length >= 5) {
+            console.log("only 5 cards allowed")
+        } else {
+            fetch("http://localhost:9292/card_decks", {
+            method: "POST",
+            headers: {Accept: "application/json",
+                    "Content-Type": "application/json"},
+            body: JSON.stringify(cardObj)
+            })
+            .then(r => r.json())
+            
+            getDeckCards(selectedDeck)
+        }
+    }   
+    
 
     return (
         heroCards.map((card) => <div className="HeroCards">   
