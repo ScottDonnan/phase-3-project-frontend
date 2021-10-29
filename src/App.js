@@ -53,7 +53,7 @@ function App() {
     <div>
       <NavBar setDisplayDeck={setDisplayDeck} setCreateDeck={setCreateDeck}/>
       {/* <DeckContainer getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} /> */}
-      <CardContainer setSelectedHero={setSelectedHero} getDeckCards={getDeckCards} displayCards={displayCards} selectedDeck={selectedDeck} />
+      <CardContainer deckCardList={deckCardList} setSelectedHero={setSelectedHero} getDeckCards={getDeckCards} displayCards={displayCards} selectedDeck={selectedDeck} />
 
       {createDeck=== true ? <Sidebar setDeckCardList={setDeckCardList} selectedHero={selectedHero} getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} setCreateDeck={setCreateDeck} deckList={deckList} displayDeck={displayDeck} setDisplayDeck={setDisplayDeck}/> : <CreateDeck selectedHero={selectedHero}/>}
     </div>

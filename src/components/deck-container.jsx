@@ -5,7 +5,7 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
   
   const [deckList, setDeckList] = useState([])
   
-  let selectedDeckName = "My Deck"
+  let selectedDeckName = "Add 5 Cards"
                           console.log(selectedDeckName)
 
   useEffect(() => {

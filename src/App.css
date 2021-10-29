@@ -70,13 +70,9 @@ a {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  width: 33%;
   
 }
-
-.HeroCards img {
-  width: 30%;
-}
-
 
 .card-div {
   display: flex;
