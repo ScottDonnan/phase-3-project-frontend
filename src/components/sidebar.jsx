@@ -10,6 +10,7 @@ function Sidebar({getDeckCards, deckCardList, setDisplayCards, setSelectedDeck, 
         <Switch>
         <Route exact path="/">
           <h1>Deck List</h1>
+          <br />
           <hr />
         {deckList.map((deckList) => 
         
