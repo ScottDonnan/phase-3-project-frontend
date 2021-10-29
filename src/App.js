@@ -13,6 +13,7 @@ function App() {
   const [deckCardList, setDeckCardList] = useState([])
   const [selectedHero, setSelectedHero] = useState()
   const [createDeck, setCreateDeck] = useState(true)
+  const [deckList, setDeckList] = useState([])
   
   
 
@@ -21,8 +22,13 @@ function App() {
     .then(res => res.json())
     .then(data => setDisplayCards(data))
 
+    fetch("http://localhost:9292/decks")
+    .then(res => res.json())
+    .then(data => setDeckList(data))
     
   }, [])
+
+  console.log(deckList)
 
   const getDeckCards = (id) => {
     // console.log("test")
@@ -50,7 +56,7 @@ function App() {
       {/* <DeckContainer getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} /> */}
       <CardContainer setSelectedHero={setSelectedHero} getDeckCards={getDeckCards} displayCards={displayCards} selectedDeck={selectedDeck} />
 
-      {createDeck=== true ? <Sidebar setDeckCardList={setDeckCardList} selectedHero={selectedHero} getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} setCreateDeck={setCreateDeck}/> : <CreateDeck selectedHero={selectedHero}/>}
+      {createDeck=== true ? <Sidebar setDeckCardList={setDeckCardList} selectedHero={selectedHero} getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} setCreateDeck={setCreateDeck} deckList={deckList}/> : <CreateDeck selectedHero={selectedHero}/>}
     </div>
   );
 }

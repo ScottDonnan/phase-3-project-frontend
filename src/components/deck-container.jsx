@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import DeckCards from "./deckcards";
 
-function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCards, selectedHero, setCreateDeck, setDeckCardList}) {
+function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCards, selectedHero, setCreateDeck}) {
   
   const [deckList, setDeckList] = useState([])
   const [displayDeck, setDisplayDeck] = useState(false)
@@ -14,6 +14,7 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
     .then(data => setDeckList(data))
   }, [])
 
+  
   const handleClick = (deckName, deckId) => {
     selectedDeckName = deckName
                           console.log(selectedDeckName)
@@ -27,13 +28,8 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
   const deleteCardFromDeck = (cardId) => {
     console.log("cardID", cardId)
     fetch(`http://localhost:9292/decks/${selectedDeck}/${cardId}`, {method: "DELETE"})
-    .then(r => r.json())
-    deleteDeckCard(cardId)
-  }
-
-  function deleteDeckCard(deletedCardId) {
-    const newDeck = deckCardList.filter(card => card.id !== deletedCardId)
-    setDeckCardList(newDeck)
+    .then(console.log("Card Deleted"))
+    .then(getDeckCards(selectedDeck))
   }
 
   const heroSpecificDecks = deckList.filter(deck => deck.hero_id === selectedHero)
@@ -41,8 +37,7 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
   
   return (
       <div className="deck-container">
-        <h1>Deck Container</h1>
-        <button onClick={()=> setCreateDeck(false)}>Create New Deck</button>
+        <button onClick={()=> !setCreateDeck(false)}>Create New Deck</button>
         {heroSpecificDecks.map(deck => <button key={deck.id} onClick={() => handleClick(deck.name, deck.id)}>{deck.name}</button>)}
         {displayDeck === false ? null : <DeckCards selectedDeckName={selectedDeckName} deleteCardFromDeck={deleteCardFromDeck} deckCardList={deckCardList}/>}
       </div>

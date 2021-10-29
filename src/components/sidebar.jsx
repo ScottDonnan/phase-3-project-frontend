@@ -1,20 +1,22 @@
 import React from "react";
-import {useEffect, useState} from 'react'
-import {Link} from 'react-router-dom'
 import DeckContainer from "./deck-container";
-import {Route} from 'react-router-dom'
+import {Route, Switch} from 'react-router-dom'
 
-function Sidebar({getDeckCards, deckCardList, setDisplayCards, setSelectedDeck, selectedDeck, selectedHero, setCreateDeck, setDeckCardList}) {
+function Sidebar({getDeckCards, deckCardList, setDisplayCards, setSelectedDeck, selectedDeck, selectedHero, setCreateDeck, setDeckCardList, deckList, setDeckList}) {
 
- 
+
+
 
     return (
       <div className = "SideBar">
-
-
+        <Switch>
+        <Route exact path="/">
+        {deckList.map(deckList => <h2>{deckList.name}</h2> )}
+        </Route>
         <Route exact path="/heroClass/:heroClass">
           <DeckContainer setDeckCardList={setDeckCardList} selectedHero={selectedHero} getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} setCreateDeck={setCreateDeck}/>
         </Route>
+        </Switch>
       </div>
     );
   }

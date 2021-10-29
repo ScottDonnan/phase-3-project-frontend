@@ -7,6 +7,7 @@ function DeckCards({deckCardList, deleteCardFromDeck, selectedDeckName}) {
         return (
             <li onClick={() => deleteCardFromDeck(card.id)} key={card.id}>
                 {card.name}
+                <br/>
                 <img src={card.img} alt={card.name} />
             </li>)
     })

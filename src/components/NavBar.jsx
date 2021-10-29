@@ -2,8 +2,6 @@ import '../App.css';
 import React from "react";
 import {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
-import DeckContainer from "./deck-container";
-import {Route, Switch} from 'react-router-dom'
 
 function NavBar({setCreateDeck}) {
 
@@ -22,7 +20,7 @@ function NavBar({setCreateDeck}) {
         <img src= "https://images.blz-contentstack.com/v3/assets/bltc965041283bac56c/blt6c7a1670b63c236d/5f177eb1670b730798f13b03/homepage_logo.webp" />
 
         <Link exact to="/">
-          <h2>ALL</h2>
+          <h2>All</h2>
         </Link>
 
         {heroClass.map((hero) =>
