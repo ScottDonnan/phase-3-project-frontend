@@ -11,7 +11,9 @@ function Sidebar({getDeckCards, deckCardList, setDisplayCards, setSelectedDeck, 
       <div className = "SideBar">
         <Switch>
         <Route exact path="/">
-        {deckList.map(deckList => <h2>{deckList.name}</h2> )}
+          <h1>Deck List</h1>
+          <hr />
+        {deckList.map((deckList) => <h2>{deckList.name}</h2> )}
         </Route>
         <Route exact path="/heroClass/:heroClass">
           <DeckContainer setDisplayDeck={setDisplayDeck} displayDeck={displayDeck} setDeckCardList={setDeckCardList} selectedHero={selectedHero} getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} setCreateDeck={setCreateDeck}/>
