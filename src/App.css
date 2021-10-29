@@ -69,6 +69,12 @@ a {
   padding-left: 10px;
 }
 
+.SideBar h2 {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+
 ::-webkit-scrollbar {
   width:5px;
 }
@@ -117,6 +123,19 @@ a {
   
 }
 
+.all-cards {
+  position: relative;
+  top: 0;
+  right: 0;
+  transition: top .5s, right .5s;
+}
+
+.all-cards:hover {
+  position: relative;
+  top: -7px;
+  right: -7px;
+}
+
 .card-div img {
   width: 75%;
 }
@@ -141,6 +160,10 @@ a {
   padding: 10px;
 }
 
+.deck-cards li:hover {
+  background-color:rgba(255, 235, 205, 0.858);
+  color:rgb(60, 60, 60);
+
 .deck-cards h2 {
   text-align: center;
 }
@@ -148,5 +171,23 @@ a {
 .deck-container {
   display: flex;
   flex-direction: column;
-  text-align: center;
+}
+
+.deck-container h2 {
+  margin-top: 20px;
+}
+
+.deck-container h3 {
+  margin-top: 20px;
+}
+
+.deck-container button {
+  width: 160px;
+  height: 25px;
+  border-radius: 25px;
+}
+
+.deck-container button:hover {
+  background: black;
+  color: white;
 }
