@@ -140,6 +140,11 @@ a {
   width: 75%;
 }
 
+.deck-cards {
+  display: flex;
+  flex-direction: column;
+}
+
 .deck-cards img {
   width: 80%;
   margin-left: 10%;
@@ -161,8 +166,7 @@ a {
 }
 
 .deck-cards li:hover {
-  background-color:rgba(255, 235, 205, 0.858);
-  color:rgb(60, 60, 60);
+  background-color: black;
 }
 .deck-cards h2 {
   text-align: center;
@@ -174,6 +178,10 @@ a {
   text-align: center;
 }
 
+.deck-container div {
+  display: flex;
+}
+
 .deck-container h2 {
   margin-top: 20px;
 }
@@ -182,13 +190,26 @@ a {
   margin-top: 20px;
 }
 
-.deck-container button {
+/* .deck-container button {
   width: 160px;
-  /* height: 25px; */
+  height: 25px;
   border-radius: 5px;
-}
+} */
 
 .deck-container button:hover {
+  background: black;
+  color: white;
+}
+
+.delete-button {
+  width: 40px;
+}
+
+.deck-button {
+  width: 120px;
+}
+
+.clicked-button {
   background: black;
   color: white;
 }

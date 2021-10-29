@@ -28,9 +28,9 @@ function HeroCards({deckCardList, selectedDeck, getDeckCards, setSelectedHero}) 
         }
 
         if (deckCardList.map(card => card.id).includes(cardId)) {
-            console.log("only one copy allowed")
+            alert("only one copy allowed")
         } else if (deckCardList.length >= 5) {
-            console.log("only 5 cards allowed")
+            alert("no more cards allowed")
         } else {
             fetch("http://localhost:9292/card_decks", {
             method: "POST",
