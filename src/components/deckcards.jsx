@@ -14,7 +14,7 @@ function DeckCards({deckCardList, deleteCardFromDeck, selectedDeckName}) {
     
     return(
         <div className="deck-cards">
-            <h2>{selectedDeckName}</h2>
+            <h3>{selectedDeckName}</h3>
             {listOfCards}
         </div>
     )
