@@ -5,13 +5,13 @@ import {Link} from 'react-router-dom'
 
 function NavBar({setCreateDeck, setDisplayDeck}) {
 
-  const [heroClass, setheroClass] = useState([])
+  const [heroClass, setHeroClass] = useState([])
 
   
   useEffect(()=>{
     fetch("http://localhost:9292/heros")
     .then(res => res.json())
-    .then(data => setheroClass(data))
+    .then(data => setHeroClass(data))
   }, [])
 
     function handleClick() {

@@ -1,10 +1,11 @@
 import React from "react";
 import DeckContainer from "./deck-container";
-import {Route, Switch} from 'react-router-dom'
+import {Route, Switch, Link} from 'react-router-dom'
 
 function Sidebar({getDeckCards, deckCardList, setDisplayCards, setSelectedDeck, selectedDeck, selectedHero, setCreateDeck, setDeckCardList, deckList, setDeckList, displayDeck, setDisplayDeck}) {
 
-
+ 
+  console.log(deckList)
     return (
       <div className = "SideBar">
         <Switch>
@@ -13,8 +14,9 @@ function Sidebar({getDeckCards, deckCardList, setDisplayCards, setSelectedDeck, 
           <br />
           <hr />
         {deckList.map((deckList) => 
-        
+        <Link exact to={`/deckCards/${deckList.id}`}>
         <h2 className="deckList">{deckList.name}</h2>
+        </Link>
          )}
         </Route>
         <Route exact path="/heroClass/:heroClass">

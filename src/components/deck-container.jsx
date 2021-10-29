@@ -14,7 +14,7 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
     .then(data => setDeckList(data))
   }, [])
 
-  
+  console.log(deckCardList)
   const handleClick = (deckName, deckId) => {
     selectedDeckName = deckName
                           console.log(selectedDeckName)

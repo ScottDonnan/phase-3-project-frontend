@@ -192,3 +192,15 @@ a {
   background: black;
   color: white;
 }
+
+.assignDeck {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 30%;
+}
+
+.assignDeck img:hover{
+  position: relative;
+  top: -7px;
+  right: -7px;
+}

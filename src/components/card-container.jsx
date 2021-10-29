@@ -1,6 +1,7 @@
 import Card from "./card";
 import HeroCards from "./heroCards";
 import {Route, Switch} from 'react-router-dom'
+import DeckCardsPage from "./deckCardsPage";
 
 function CardContainer({deckCardList, displayCards, selectedDeck, getDeckCards, setSelectedHero}) {
     
@@ -12,6 +13,10 @@ function CardContainer({deckCardList, displayCards, selectedDeck, getDeckCards, 
           <Switch>
             <Route exact path="/">
               {cardList}
+            </Route>
+            
+            <Route exact path="/deckCards/:id">
+              <DeckCardsPage />
             </Route>
 
             <Route exact path="/heroClass/:heroClass">
