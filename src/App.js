@@ -13,11 +13,8 @@ function App() {
   const [deckCardList, setDeckCardList] = useState([])
   const [selectedHero, setSelectedHero] = useState()
   const [createDeck, setCreateDeck] = useState(true)
-<<<<<<< HEAD
   const [deckList, setDeckList] = useState([])
-=======
   const [displayDeck, setDisplayDeck] = useState(false)
->>>>>>> 2ff86b4532be6b022043972e55248efc57013a44
   
   
 
@@ -60,11 +57,7 @@ function App() {
       {/* <DeckContainer getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} /> */}
       <CardContainer setSelectedHero={setSelectedHero} getDeckCards={getDeckCards} displayCards={displayCards} selectedDeck={selectedDeck} />
 
-<<<<<<< HEAD
       {createDeck=== true ? <Sidebar setDeckCardList={setDeckCardList} selectedHero={selectedHero} getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} setCreateDeck={setCreateDeck} deckList={deckList}/> : <CreateDeck selectedHero={selectedHero}/>}
-=======
-      {createDeck=== true ? <Sidebar setDisplayDeck={setDisplayDeck} displayDeck={displayDeck} setDeckCardList={setDeckCardList} selectedHero={selectedHero} getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} setCreateDeck={setCreateDeck}/> : <CreateDeck selectedHero={selectedHero}/>}
->>>>>>> 2ff86b4532be6b022043972e55248efc57013a44
     </div>
   );
 }

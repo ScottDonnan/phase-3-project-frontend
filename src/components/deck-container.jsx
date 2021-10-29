@@ -1,11 +1,7 @@
 import { useEffect, useState } from "react";
 import DeckCards from "./deckcards";
 
-<<<<<<< HEAD
-function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCards, selectedHero, setCreateDeck}) {
-=======
 function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCards, selectedHero, setCreateDeck, setDeckCardList, displayDeck, setDisplayDeck}) {
->>>>>>> 2ff86b4532be6b022043972e55248efc57013a44
   
   const [deckList, setDeckList] = useState([])
   
