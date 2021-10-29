@@ -1,10 +1,10 @@
 import { useEffect, useState } from "react";
 import DeckCards from "./deckcards";
 
-function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCards, selectedHero, setCreateDeck, setDeckCardList}) {
+function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCards, selectedHero, setCreateDeck, setDeckCardList, displayDeck, setDisplayDeck}) {
   
   const [deckList, setDeckList] = useState([])
-  const [displayDeck, setDisplayDeck] = useState(false)
+  
   let selectedDeckName = "My Deck"
                           console.log(selectedDeckName)
 
@@ -20,7 +20,7 @@ function DeckContainer({setSelectedDeck, selectedDeck, deckCardList, getDeckCard
     if(deckId !== selectedDeck){
       setSelectedDeck(deckId)
     }
-    setDisplayDeck((value) => value = !displayDeck)
+    setDisplayDeck((value) => value = true)
     getDeckCards(deckId)
   }
 

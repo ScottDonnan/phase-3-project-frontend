@@ -13,6 +13,7 @@ function App() {
   const [deckCardList, setDeckCardList] = useState([])
   const [selectedHero, setSelectedHero] = useState()
   const [createDeck, setCreateDeck] = useState(true)
+  const [displayDeck, setDisplayDeck] = useState(false)
   
   
 
@@ -46,11 +47,11 @@ function App() {
 
   return (
     <div>
-      <NavBar setCreateDeck={setCreateDeck}/>
+      <NavBar setDisplayDeck={setDisplayDeck} setCreateDeck={setCreateDeck}/>
       {/* <DeckContainer getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} /> */}
       <CardContainer setSelectedHero={setSelectedHero} getDeckCards={getDeckCards} displayCards={displayCards} selectedDeck={selectedDeck} />
 
-      {createDeck=== true ? <Sidebar setDeckCardList={setDeckCardList} selectedHero={selectedHero} getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} setCreateDeck={setCreateDeck}/> : <CreateDeck selectedHero={selectedHero}/>}
+      {createDeck=== true ? <Sidebar setDisplayDeck={setDisplayDeck} displayDeck={displayDeck} setDeckCardList={setDeckCardList} selectedHero={selectedHero} getDeckCards={getDeckCards} deckCardList={deckCardList} setDisplayCards={setDisplayCards} setSelectedDeck={setSelectedDeck} selectedDeck={selectedDeck} setCreateDeck={setCreateDeck}/> : <CreateDeck selectedHero={selectedHero}/>}
     </div>
   );
 }
