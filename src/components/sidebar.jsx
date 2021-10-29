@@ -2,11 +2,7 @@ import React from "react";
 import DeckContainer from "./deck-container";
 import {Route, Switch} from 'react-router-dom'
 
-<<<<<<< HEAD
-function Sidebar({getDeckCards, deckCardList, setDisplayCards, setSelectedDeck, selectedDeck, selectedHero, setCreateDeck, setDeckCardList, deckList, setDeckList}) {
-=======
-function Sidebar({getDeckCards, deckCardList, setDisplayCards, setSelectedDeck, selectedDeck, selectedHero, setCreateDeck, setDeckCardList, displayDeck, setDisplayDeck}) {
->>>>>>> 2ff86b4532be6b022043972e55248efc57013a44
+function Sidebar({getDeckCards, deckCardList, setDisplayCards, setSelectedDeck, selectedDeck, selectedHero, setCreateDeck, setDeckCardList, deckList, setDeckList, displayDeck, setDisplayDeck}) {
 
 
 
