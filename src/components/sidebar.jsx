@@ -14,9 +14,8 @@ function Sidebar({getDeckCards, deckCardList, setDisplayCards, setSelectedDeck, 
           <br />
           <hr />
         {deckList.map((deckList) => 
-        <Link exact to={`/deckCards/${deckList.id}`}>
         <h2 className="deckList">{deckList.name}</h2>
-        </Link>
+        
          )}
         </Route>
         <Route exact path="/heroClass/:heroClass">

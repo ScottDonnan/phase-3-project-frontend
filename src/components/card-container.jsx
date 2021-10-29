@@ -15,9 +15,6 @@ function CardContainer({deckCardList, displayCards, selectedDeck, getDeckCards, 
               {cardList}
             </Route>
             
-            <Route exact path="/deckCards/:id">
-              <DeckCardsPage />
-            </Route>
 
             <Route exact path="/heroClass/:heroClass">
               <HeroCards deckCardList={deckCardList} setSelectedHero={setSelectedHero} getDeckCards={getDeckCards} selectedDeck={selectedDeck}/>
